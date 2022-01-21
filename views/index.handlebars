@@ -1,0 +1,46 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+<div id="grdMembers">
+    <h4>Members</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Designation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each members}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.designation}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div id="CreateForm">
+    <form action="api/members" method="POST" class="mb-4">
+        <div class="form-group  mt-4">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control"></input>
+        </div>
+        <div class="form-group  mt-4">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control"></input>
+        </div>
+        <div class="form-group  mt-4">
+            <label for="designation">Designation</label>
+            <input type="text" name="designation" class="form-control"></input>
+        </div>
+        <div class="form-group mt-4">
+            <input type="submit" value="Add Member" class="btn btn-primary btn-block">
+        </div>
+    </form>
+</div>
+
+<a href="/api/members" class="btn btn-light mt-4">Visit API</a>
